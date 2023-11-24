@@ -21,7 +21,6 @@ createApp({
         const data = {
             todo:{
                 'text': this.newTodo,
-                'done' : false
             }
         }
         console.log(data.todo)
@@ -34,6 +33,7 @@ createApp({
             if (respData.success === true) {
                 this.todos = res.data.result;
             }
+            
         })
     },
 

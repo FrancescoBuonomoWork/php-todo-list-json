@@ -1,6 +1,5 @@
 <?php
 
-
 $todos = [
     [
         'text' => 'PHP',
@@ -26,4 +25,5 @@ $response = [
 ];
 
 header('Content-Type: application/json');
+// formatta in formato json 
 echo json_encode($response);

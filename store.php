@@ -19,15 +19,11 @@ $todos = [
 ];
 // recuperare il parametro dal $_POST
 $new_todo = $_POST['todo'] ?? '';
-// echo $new_todo;
 $response = [
     'success' => true,
 ];
 // var_dump($response);
 if ($new_todo) {
-    // $new_todo_text = [$new_todo['text']];
-    // var_dump($new_todo_text);
-
     // pushare il todo nei todos
     $todos[] = [
         'text' => $new_todo['text'],
