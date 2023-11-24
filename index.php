@@ -25,7 +25,7 @@
         <section>
             <div class="container">
                 <ul>
-                    <li v-for="todo in todos">{{todo.text}}</li>
+                    <li v-for="(todo,i) in todos" :key='i'>{{todo.text}}</li>
                 </ul>
             </div>
         </section>

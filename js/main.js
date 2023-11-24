@@ -16,6 +16,13 @@ createApp({
             this.todos = res.data;
         })
     },
+    fetchDataStore(){
+        // chiamata al server che mi da la risposta e popolo l array todos 
+        axios.get('store.php').then((res)=>{
+            console.log(res.data);
+            this.todos = res.data;
+        })
+    },
     storeTodo(){
         console.log('add',this.newTodo);
         const data = {
@@ -37,6 +44,7 @@ createApp({
 
   },
   created() {
-    this.fetchData()
+    this.fetchData();
+    this.fetchDataStore()
   }
 }).mount('#app')
