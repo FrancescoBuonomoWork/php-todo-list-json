@@ -3,23 +3,27 @@
 
 $todos = [
     [
-    'text' => 'PHP',
-    'done' => false
+        'text' => 'PHP',
+        'done' => false
     ],
     [
-    'text' => 'JavaScript',
-    'done' => false
+        'text' => 'JavaScript',
+        'done' => false
     ],
     [
-    'text' => 'HTML',
-    'done' => true
+        'text' => 'HTML',
+        'done' => true
     ],
     [
-    'text' => 'CSS',
-    'done' => true
+        'text' => 'CSS',
+        'done' => true
     ]
-    ];
+];
+
+$response = [
+    'success' => true,
+    'result' => $todos
+];
 
 header('Content-Type: application/json');
-
-echo json_encode($todos);
+echo json_encode($response);

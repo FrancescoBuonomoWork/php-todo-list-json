@@ -12,15 +12,8 @@ createApp({
     fetchData(){
         // chiamata al server che mi da la risposta e popolo l array todos 
         axios.get('server.php').then((res)=>{
-            console.log(res.data);
-            this.todos = res.data;
-        })
-    },
-    fetchDataStore(){
-        // chiamata al server che mi da la risposta e popolo l array todos 
-        axios.get('store.php').then((res)=>{
-            console.log(res.data);
-            this.todos = res.data;
+            console.log(res.data.result);
+            this.todos = res.data.result;
         })
     },
     storeTodo(){
@@ -37,14 +30,15 @@ createApp({
                 'Content-Type': 'multipart/form-data',
             },
         }).then((res)=>{
-            console.log(res.data);
-            
+            const respData = res.data;
+            if (respData.success === true) {
+                this.todos = res.data.result;
+            }
         })
     },
 
   },
   created() {
     this.fetchData();
-    this.fetchDataStore()
   }
 }).mount('#app')
