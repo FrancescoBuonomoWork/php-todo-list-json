@@ -1,4 +1,6 @@
 <?php
+
+
 $todos = [
     [
     'text' => 'PHP',
@@ -17,6 +19,7 @@ $todos = [
     'done' => true
     ]
     ];
+
 header('Content-Type: application/json');
 
 echo json_encode($todos);

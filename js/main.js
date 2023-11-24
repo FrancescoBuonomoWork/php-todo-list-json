@@ -16,9 +16,21 @@ createApp({
             this.todos = res.data;
         })
     },
-    addTodo(){
-        console.log('add');
-        console.log(this.newTodo)
+    storeTodo(){
+        console.log('add',this.newTodo);
+        const data = {
+            todo:{
+                'text': this.newTodo,
+                'done' : false
+            }
+        }
+        axios.post('store.php', data,{
+            headers: {
+                'Content-Type': 'multipart/form-data',
+            },
+        }).then((res)=>{
+            console.log(res.data)
+        })
     },
 
   },
