@@ -30,7 +30,7 @@ createApp({
                 'Content-Type': 'multipart/form-data',
             },
         }).then((res)=>{
-            console.log(res);
+            console.log(res.data);
             
         })
     },
