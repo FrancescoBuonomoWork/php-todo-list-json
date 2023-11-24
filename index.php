@@ -13,7 +13,7 @@
             <div class="container">
                 <h1>{{title}}</h1>
                 <div>
-                    <input type="text" v-model="storeTodo" @keyup.enter="addTodo">
+                    <input type="text" v-model="newTodo" @keyup.enter="    storeTodo">
                 </div>
             
             </div>

@@ -24,12 +24,14 @@ createApp({
                 'done' : false
             }
         }
+        console.log(data.todo)
         axios.post('store.php', data,{
             headers: {
                 'Content-Type': 'multipart/form-data',
             },
         }).then((res)=>{
-            console.log(res.data)
+            console.log(res);
+            
         })
     },
 
