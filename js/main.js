@@ -56,13 +56,27 @@ createApp({
         }
       })
     },
-    toggleDone(t) {
-      console.log('toggle', t.done);
-      if (t.done === false) {
-        return t.done = true
-      } else {
-        return t.done = false
-      }
+    toggleDone(currentTodo) {
+      console.log('toggle', currentTodo.done);
+      // if (t.done === false) {
+      //   return t.done = true
+      // } else {
+      //   return t.done = false
+      // };
+      const data = {
+        currentTodo
+      };
+      axios.post('toggle.php',data,{
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }).then((res)=>{
+        console.log(res);
+        const respData = res.data;
+        if (respData.success === true) {
+          currentTodo = res.data.result;
+        }
+      })
 
     }
 
