@@ -1,23 +1,5 @@
 <?php
 
-// $todos = [
-//     [
-//         'text' => 'PHP',
-//         'done' => false
-//     ],
-//     [
-//         'text' => 'JavaScript',
-//         'done' => false
-//     ],
-//     [
-//         'text' => 'HTML',
-//         'done' => true
-//     ],
-//     [
-//         'text' => 'CSS',
-//         'done' => true
-//     ]
-// ];
 // leggere il contenuto del file json 
 $todos_string = file_get_contents('./todos.json');
 //decodicficare il file json per ottenere l array

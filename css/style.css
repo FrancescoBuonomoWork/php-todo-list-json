@@ -10,6 +10,14 @@ ol,ul,menu{
 section{
     padding: 20px;
 }
+#app{
+    
+    height: 100vh;
+}
+.todo-sect{
+    height: 100%;
+  background-color: grey
+}
 .container{
     max-width: 900px;
     margin: 0 auto;
@@ -19,6 +27,11 @@ section{
     align-items: center;
     justify-content: space-between;
     padding: 5px 0;
+    border: 2px solid rgba(0, 0, 0, 0.097);
+}
+.todo-list{
+    background-color: white;
+    color: black;
 }
 
 .todo-list__item.done :first-child{
