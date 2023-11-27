@@ -38,6 +38,19 @@ createApp({
           })
         }
     },
+    deleteTodo(index){
+      console.log('delete',index);
+      const data = {
+        "id" : index,
+      }
+     axios.post('destroy.php',data,{
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+     }).then((res)=>{
+      console.log(res);
+     })
+    }
 
   },
   created() {
