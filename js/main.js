@@ -18,23 +18,24 @@ createApp({
     },
     storeTodo(){
         console.log('add',this.newTodo);
-        const data = {
-            todo:{
-                'text': this.newTodo,
-            }
+        if(this.newTodo !== ''){
+          const data = {
+              todo:{
+                  'text': this.newTodo,
+              }
+          }
+          console.log(data.todo)
+          axios.post('store.php', data,{
+              headers: {
+                  'Content-Type': 'multipart/form-data',
+              },
+          }).then((res)=>{
+              const respData = res.data;
+              if (respData.success === true) {
+                  this.todos = res.data.result;
+              }
+          })
         }
-        console.log(data.todo)
-        axios.post('store.php', data,{
-            headers: {
-                'Content-Type': 'multipart/form-data',
-            },
-        }).then((res)=>{
-            const respData = res.data;
-            if (respData.success === true) {
-                this.todos = res.data.result;
-            }
-            
-        })
     },
 
   },
