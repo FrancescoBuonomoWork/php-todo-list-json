@@ -27,7 +27,7 @@
             <div class="container">
                 <ul class="todo-list">
                     <li class="todo-list__item" :class="todo.done ? 'done' : ''" v-for="(todo,i) in todos" :key='i'>
-                        <span>{{todo.text}}</span>
+                        <span @click="toggleDone(todo)">{{todo.text}}</span>
                         <span @click="deleteTodo(i)">Elimina</span>
                     </li>
                 </ul>

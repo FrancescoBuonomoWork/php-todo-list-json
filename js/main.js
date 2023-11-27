@@ -17,14 +17,14 @@ createApp({
         })
     },
     storeTodo(){
-        console.log('add',this.newTodo);
+        // console.log('add',this.newTodo);
         if(this.newTodo.trim() !== ''){
           const data = {
               todo:{
                   'text': this.newTodo,
               }
           }
-          console.log(data.todo)
+          // console.log(data.todo)
           axios.post('store.php', data,{
             headers: {
               'Content-Type': 'multipart/form-data',
@@ -50,6 +50,15 @@ createApp({
      }).then((res)=>{
       console.log(res);
      })
+    },
+    toggleDone(t){
+      console.log('toggle',t.done);
+      if(t.done === false){
+        return t.done = true
+      } else{
+        return t.done = false
+      }
+      
     }
 
   },
