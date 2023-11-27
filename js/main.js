@@ -18,7 +18,7 @@ createApp({
     },
     storeTodo(){
         console.log('add',this.newTodo);
-        if(this.newTodo !== ''){
+        if(this.newTodo.trim() !== ''){
           const data = {
               todo:{
                   'text': this.newTodo,
@@ -26,14 +26,15 @@ createApp({
           }
           console.log(data.todo)
           axios.post('store.php', data,{
-              headers: {
-                  'Content-Type': 'multipart/form-data',
-              },
+            headers: {
+              'Content-Type': 'multipart/form-data',
+            },
           }).then((res)=>{
-              const respData = res.data;
-              if (respData.success === true) {
-                  this.todos = res.data.result;
-              }
+            const respData = res.data;
+            if (respData.success === true) {
+              this.todos = res.data.result;
+            }
+            this.newTodo = '';
           })
         }
     },

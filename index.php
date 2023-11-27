@@ -10,6 +10,7 @@
     <title>To Do List</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <div id="app">
@@ -25,7 +26,10 @@
         <section>
             <div class="container">
                 <ul>
-                    <li v-for="(todo,i) in todos" :key='i'>{{todo.text}}</li>
+                    <li v-for="(todo,i) in todos" :key='i'>
+                      <span>{{todo.text}}</span>
+                      <!-- <span>Elimina</span>   -->
+                    </li>
                 </ul>
             </div>
         </section>
