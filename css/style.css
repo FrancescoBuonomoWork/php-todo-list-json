@@ -2,9 +2,25 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
-
+ol,ul,menu{
+    list-style: none;
+}
+section{
+    padding: 20px;
+}
 .container{
     max-width: 900px;
     margin: 0 auto;
+}
+.todo-list__item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 0;
+}
+
+.todo-list__item.done :first-child{
+    text-decoration: line-through;
 }

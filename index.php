@@ -25,10 +25,10 @@
         </section>
         <section>
             <div class="container">
-                <ul>
-                    <li v-for="(todo,i) in todos" :key='i'>
-                      <span>{{todo.text}}</span>
-                      <!-- <span>Elimina</span>   -->
+                <ul class="todo-list">
+                    <li class="todo-list__item" :class="todo.done ? 'done' : ''" v-for="(todo,i) in todos" :key='i'>
+                        <span>{{todo.text}}</span>
+                        <span>Elimina</span>
                     </li>
                 </ul>
             </div>
