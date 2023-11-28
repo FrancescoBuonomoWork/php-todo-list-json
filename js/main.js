@@ -53,6 +53,8 @@ createApp({
         const respData = res.data;
         if (respData.success === true) {
           this.todos = res.data.result;
+        } else{
+          console.log(res.data.message);
         }
       })
     },
